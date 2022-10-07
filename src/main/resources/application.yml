@@ -1,0 +1,6 @@
+server:
+  port: 8099
+
+scheduled:
+  task:
+    cron: 0/5 * * * * *
