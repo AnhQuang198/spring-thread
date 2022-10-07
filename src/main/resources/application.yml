@@ -4,3 +4,10 @@ server:
 scheduled:
   task:
     cron: 0/5 * * * * *
+    enable: false
+spring:
+  data:
+    mongodb:
+      database: ${MONGODB_DB}
+      host: ${MONGODB_HOST}
+      port: ${MONGODB_PORT}
