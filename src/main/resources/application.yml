@@ -4,10 +4,22 @@ server:
 scheduled:
   task:
     cron: 0/5 * * * * *
-    enable: true
+    enable: false
 spring:
   data:
     mongodb:
       database: ${MONGODB_DB}
       host: ${MONGODB_HOST}
       port: ${MONGODB_PORT}
+      username: root
+      password: password123
+
+logging:
+  level:
+    org:
+      hibernate:
+        SQL: DEBUG
+        type:
+          descriptor:
+            sql:
+              BasicBinder: TRACE
