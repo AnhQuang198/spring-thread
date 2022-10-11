@@ -12,8 +12,6 @@ import java.sql.Timestamp;
 @Setter
 @Document(collection = "task_execute")
 public class TaskExecute {
-    @Id
-    private Long id;
 
     @Field(value = "task_name")
     private String taskName;

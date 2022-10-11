@@ -4,7 +4,7 @@ server:
 scheduled:
   task:
     cron: 0/5 * * * * *
-    enable: false
+    enable: true
 spring:
   data:
     mongodb:

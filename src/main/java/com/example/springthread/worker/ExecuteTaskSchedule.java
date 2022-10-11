@@ -33,9 +33,9 @@ public class ExecuteTaskSchedule {
             ThreadPoolExecutor threadPoolExecutor = new ThreadPoolExecutor(corePoolSize,
                     maximumPoolSize, keepAliveTime, unit, workQueue, handler);
 
-            for (int i = 0; i < 10; i++) {
+            for (int i = 0; i < 2; i++) {
                 System.out.println("Count: " + i);
-                threadPoolExecutor.execute(new TaskThread(i));
+                threadPoolExecutor.execute(new TaskThread(15));
             }
         }
     }
