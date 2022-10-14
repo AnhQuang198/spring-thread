@@ -71,7 +71,7 @@ public class ExecuteTaskSchedule {
                 int page = 0;
                 int pageSize = 10;
                 int count = (int) totalUser / pageSize;
-                for (int i = 0; i <= (count / 10); i++) {
+                for (int i = 0; i <= count; i++) {
                     List<UserMongo> userPage = userService.getUserDataMongo(page, pageSize);
                     for (UserMongo usMg : userPage) {
                         User user = new User();

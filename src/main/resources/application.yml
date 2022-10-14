@@ -3,7 +3,7 @@ server:
 
 scheduled:
   task:
-    cron: 0 0/5 * * * *
+    cron: 0 0/3 * * * *
     enable: true
 spring:
   datasource:
