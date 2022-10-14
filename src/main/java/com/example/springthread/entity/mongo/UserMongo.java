@@ -8,7 +8,7 @@ import org.springframework.data.mongodb.core.mapping.Field;
 
 @Getter
 @Setter
-@Document(collection = "test_data")
+@Document(collection = "data")
 public class UserMongo {
     @Id
     private String id;

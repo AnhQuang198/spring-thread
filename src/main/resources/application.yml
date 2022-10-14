@@ -3,8 +3,8 @@ server:
 
 scheduled:
   task:
-    cron: 0/5 * * * * *
-    enable: false
+    cron: 0 0/5 * * * *
+    enable: true
 spring:
   datasource:
     url: ${MYSQL_URL}
