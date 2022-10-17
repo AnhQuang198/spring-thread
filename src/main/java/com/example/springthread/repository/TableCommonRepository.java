@@ -14,8 +14,7 @@ public class TableCommonRepository {
 
     public void createTable(String tableName, List<ColumnConfig> configs) {
         StringBuilder sql = new StringBuilder("CREATE TABLE ")
-                .append(tableName).append("(")
-                .append("id INT NOT NULL AUTO_INCREMENT, ");
+                .append(tableName).append("(id INT NOT NULL AUTO_INCREMENT, ");
         appendColumn(configs, sql);
         sql.append("PRIMARY KEY (id)");
         sql.append(")");
