@@ -4,6 +4,7 @@ import com.example.springthread.request.ColumnConfig;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -12,12 +13,20 @@ public class TableCommonRepository {
     @Autowired
     private JdbcTemplate jdbcTemplate;
 
+    @Transactional
     public void createTable(String tableName, List<ColumnConfig> configs) {
-        StringBuilder sql = new StringBuilder("CREATE TABLE ")
-                .append(tableName).append("(id INT NOT NULL AUTO_INCREMENT, ");
+        StringBuilder sql = new StringBuilder("CREATE TABLE ");
+        sql.append(tableName);
+        sql.append("(id INT NOT NULL AUTO_INCREMENT, ");
         appendColumn(configs, sql);
-        sql.append("PRIMARY KEY (id)");
-        sql.append(")");
+        sql.append("created_at TIMESTAMP NULL");
+        sql.append("updated_at TIMESTAMP NULL");
+        sql.append(", PRIMARY KEY (id))");
+        jdbcTemplate.execute(String.valueOf(sql));
+    }
+
+    public void dropTable(String tableName) {
+        StringBuilder sql = new StringBuilder("DROP TABLE ").append(tableName);
         jdbcTemplate.execute(String.valueOf(sql));
     }
 

@@ -1,14 +1,11 @@
 package com.example.springthread.entity.mysql;
 
-import com.example.springthread.request.ColumnConfig;
-import com.example.springthread.request.TemplateRequest;
 import lombok.Data;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
 import javax.persistence.*;
 import java.sql.Timestamp;
-import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "template")
