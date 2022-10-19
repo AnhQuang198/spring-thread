@@ -2,6 +2,8 @@ package com.example.springthread.entity.mysql;
 
 import lombok.Getter;
 import lombok.Setter;
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
 
 import javax.persistence.*;
 import java.sql.Timestamp;
@@ -24,6 +26,9 @@ public class FormMetadata {
     @Column(name = "description")
     private String description;
 
+    @Column(name = "is_generated")
+    private Integer isGenerated;
+
     @Column(name = "status")
     private String status;
 
@@ -36,9 +41,11 @@ public class FormMetadata {
     @Column(name = "updated_by")
     private Long updatedBy;
 
+    @CreationTimestamp
     @Column(name = "created_at")
     private Timestamp createdAt;
 
+    @UpdateTimestamp
     @Column(name = "updated_at")
     private Timestamp updatedAt;
 }

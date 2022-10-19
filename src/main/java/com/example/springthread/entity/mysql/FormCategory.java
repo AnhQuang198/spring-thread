@@ -1,7 +1,11 @@
 package com.example.springthread.entity.mysql;
 
+import com.example.springthread.common.Constants;
+import com.example.springthread.request.FormCategoryRequest;
 import lombok.Getter;
 import lombok.Setter;
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
 
 import javax.persistence.*;
 import java.sql.Timestamp;
@@ -51,9 +55,24 @@ public class FormCategory {
     @Column(name = "updated_by")
     private Long updatedBy;
 
+    @CreationTimestamp
     @Column(name = "created_at")
     private Timestamp createdAt;
 
+    @UpdateTimestamp
     @Column(name = "updated_at")
     private Timestamp updatedAt;
+
+    public void mapData(FormCategoryRequest request) {
+        setCode(request.getCode());
+        setName(request.getName());
+        setDescription(request.getDescription());
+        setColor(request.getColor());
+        setPriority(request.getPriority());
+        setOrganizationCode(request.getOrganizationCode());
+        setOrganizationId(request.getOrganizationId());
+        setStatus(Constants.STATUS.ACTIVE);
+        setCategoryType(request.getCategoryType());
+        setType(request.getType());
+    }
 }
